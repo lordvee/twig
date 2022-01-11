@@ -2,9 +2,9 @@
 
 /**
  * Takes an array and splits them in n arrays
- * @param  {[Array]} inputArray The input array
- * @param  {[integer]} size     The size of arrays to create
- * @return {[Array]}            The new re-grouped array
+ * @param  {Array} inputArray The input array
+ * @param  {integer} size     The size of arrays to create
+ * @return {Array}            The new re-grouped array
  */
 
 const splitArray = (inputArray, size) => {
