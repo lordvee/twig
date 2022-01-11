@@ -11,8 +11,11 @@ const splitArray = (inputArray, size) => {
   // we define the array that will be returned once resized
   let resizedArray = [];
   // make sure size is not negative
+  if(!Array.isArray(inputArray)){
+    throw new Error('Incorrect parameter: the first parameter must be an array');
+  }
 
-  if(size >= 0) {
+  if(size && size >= 0) {
     // round it up to make sure no remainder is left
     const iterations = Math.ceil(inputArray.length / size);
 
@@ -27,7 +30,7 @@ const splitArray = (inputArray, size) => {
 
   } else {
     // throw and error in case size is negative
-    throw new Error('The size cannot be negative');
+    throw new Error('The size cannot be negative or null');
   }
 }
 

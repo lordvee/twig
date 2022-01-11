@@ -14,7 +14,22 @@ describe('splitArray function', () =>{
     //'Error: The size cannot be negative', 'Error: The size cannot be negative'
     {
       name: 'Error',
-      message: 'The size cannot be negative',
+      message: 'The size cannot be negative or null',
+      // Only properties on the validation object will be tested for.
+      // Using nested objects requires all properties to be present. Otherwise
+      // the validation is going to fail.
+    })
+  });
+  it('Should throw if non-array object passed as first argument', ()=> {
+    const size = 3;
+
+    assert.throws( ()=> {
+      splitArray('hello', size);
+    },
+    //'Error: The size cannot be negative', 'Error: The size cannot be negative'
+    {
+      name: 'Error',
+      message: 'Incorrect parameter: the first parameter must be an array',
       // Only properties on the validation object will be tested for.
       // Using nested objects requires all properties to be present. Otherwise
       // the validation is going to fail.
